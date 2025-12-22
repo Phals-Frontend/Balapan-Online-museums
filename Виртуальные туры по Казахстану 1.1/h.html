@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Виртуальные музеи Казахстана</title>
+<link rel="stylesheet" href="c.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+        <div class="logo">Virtual Qazaq Museums</div>
+        <ul>
+            <li><a href="h.html">Главная</a></li>
+            <li><a href="info.html">Описание</a></li>
+            <li><a href="pop.html">Популярные</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="p.html">Премиум</a></li>
+            <li><a href="contact.html">Связаться</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Виртуальные музеи Казахстана</h1>
+        <p>История и культура <span class="accent">Великой степи</span></p>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">О проекте</h2>
+    <p style="max-width:800px;margin:auto;text-align:center">
+        Платформа открывает доступ к
+        <span class="accent">уникальным музеям</span> и
+        <span class="accent">закрытым залам</span> Казахстана онлайн.
+    </p>
+    <div style="text-align:center;margin-top:30px">
+        <a href="info.html" class="btn">Читать далее</a>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Популярные музеи</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Национальный музей Республики Казахстан</h3>
+            <p>Один из крупнейших музеев Центральной Азии. Экспозиции музея охватывают историю Казахстана с древнейших времён до современности. Здесь представлены археологические находки, Золотой человек, этнографические коллекции, предметы культуры и искусства, а также интерактивные залы с мультимедийными технологиями.</p>
+        </div>
+        <div class="card">
+            <h3>Центральный государственный музей Республики Казахстан</h3>
+            <p>Один из старейших музеев страны, основанный в XIX веке. Музей знакомит посетителей с историей, природой, археологией и этнографией Казахстана. В его фондах хранятся редкие экспонаты, связанные с кочевой культурой, бытом казахского народа и развитием государства.</p>
+        </div>
+        <div class="card">
+            <h3>Государственный музей искусства имени Абылхана Кастеева</h3>
+            <p>Крупнейший художественный музей Казахстана. В нём собраны произведения казахстанских и зарубежных художников, включая живопись, графику, скульптуру и декоративно-прикладное искусство. Особое место занимает творчество Абылхана Кастеева — основоположника казахского изобразительного искусства.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Премиум-доступ</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Фримиум</h3>
+            <ul class="privileges">
+                <li>Ограниченный доступ к музеям</li>
+                <li>Базовые экспозиции</li>
+                <li>Небольшое количество залов</li>
+                <li>Стандартное качество</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Лайт-премиум</h3>
+            <ul class="privileges">
+                <li>Закрытые залы</li>
+                <li>Новый музей каждую неделю</li>
+                <li>Эксклюзивный контент</li>
+                <li>Расширенные описания</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Премиум</h3>
+            <ul class="privileges">
+                <li>Все музеи без ограничений</li>
+                <li>Эксклюзивные рассылки</li>
+                <li>Максимальное качество туров</li>
+                <li>Ранний доступ к проектам</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<button id="scrollToTop">↑</button>
+
+    <script>
+    const scrollBtn = document.getElementById("scrollToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > window.innerHeight / 2) {
+            scrollBtn.style.display = "flex";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+    </script>
+</body>
+</html>
