@@ -1,0 +1,151 @@
+	1. CSS
+
+Переменные (:root)
+:root {
+    --bg-main: #1B6850;
+    --accent: #F6DB72;
+    --text: #ffffff;
+    --glow: rgba(246,219,114,0.7);
+}
+
+
+Объяснение:
+
+Это цвета и эффекты, которые используются по всей странице.
+
+--bg-main — основной фон, --accent — акцентный цвет для текста и кнопок, --glow — эффект свечения.
+
+Использование переменных упрощает изменение цветов в будущем.
+
+	Общие стили
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Georgia, ...; background: var(--bg-main); color: var(--text); }
+
+
+Объяснение:
+
+Сбрасываются отступы и рамки у всех элементов (*).
+
+Шрифт задаёт классический стиль, фон и цвет текста устанавливают визуальную тему страницы.
+
+	Header и навигация
+
+header { position: fixed; top: 0; width: 100%; background: rgba(...); }
+.nav { display: flex; justify-content: space-between; }
+.nav a::after { transition: .3s; }
+
+
+Объяснение:
+
+header фиксируется вверху страницы, чтобы меню всегда было видно.
+
+nav — меню сайта, с элементами, которые красиво подсвечиваются при наведении (::after — это анимация линии под ссылкой).
+
+	Hero-фото
+
+.hero { height: 100vh; display: flex; justify-content: center; align-items: center; }
+.hero::before { background: url("assets/hero.jpg") center/cover; filter: blur(10px); }
+.hero::after { overlay с цветом }
+.hero-content { z-index: 3; }
+.hero h1 { text-shadow: glow; color: var(--accent); }
+
+
+Объяснение:
+
+Hero — это главный фон в начале сайта, занимает весь экран.
+
+::before добавляет фон с размытием, ::after — затемнение, чтобы текст был читаемым.
+
+Заголовок h1 подсвечен цветом и свечением.
+
+	Секции и карточки
+
+section { padding: 100px 10%; }
+.card { background: rgba(...); border-radius: 20px; transition: transform .3s; }
+.card:hover { transform: translateY(-8px); }
+
+
+Объяснение:
+
+Секции отделены отступами, карточки (card) — это блоки с контентом.
+
+При наведении карточки слегка поднимаются, создавая эффект интерактивности.
+
+	Списки и привилегии
+
+.privileges li::before { content: "✦"; color: var(--accent); text-shadow: glow; }
+
+
+Объяснение:
+
+Каждая привилегия списка отмечается иконкой с подсветкой, чтобы было красиво и читаемо.
+
+	Кнопки
+
+.btn { padding: 14px 28px; background: var(--accent); border-radius: 30px; }
+.btn:hover { transform и glow; }
+
+
+Объяснение:
+
+Основные кнопки сайта используют акцентный цвет и плавные анимации при наведении.
+
+	Форма обратной связи
+
+.contact-form { background: rgba(...); padding: 40px; border-radius: 25px; display: flex; flex-direction: column; gap: 18px; }
+.contact-form textarea { resize: none; }
+
+
+Объяснение:
+
+Форма оформлена как карточка, центрирована по экрану.
+
+Поле для сообщения редактируемое, но нельзя менять размер (resize: none).
+
+Кнопка отправки подсвечена и имеет glow при наведении.
+
+	Кнопка “вверх”
+
+#scrollToTop { position: fixed; bottom: 40px; right: 40px; display: none; background: var(--accent); border-radius: 50%; }
+#scrollToTop:hover { box-shadow и transform }
+
+
+Объяснение:
+
+Кнопка фиксирована в углу и появляется только после прокрутки вниз.
+
+При наведении подсвечивается, создавая эффект интерактивности.
+
+	2. JS
+
+const scrollBtn = document.getElementById("scrollToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight / 2) {
+        scrollBtn.style.display = "flex";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+Объяснение:
+
+Находим кнопку scrollToTop.
+
+Событие прокрутки (scroll):
+
+Если пользователь пролистал вниз больше половины экрана — показываем кнопку.
+
+Если вернулся вверх — скрываем кнопку.
+
+Событие клика (click):
+
+Плавно прокручивает страницу к верху (smooth scroll).
+
+Функция: делает сайт удобнее для пользователя — быстро возвращаться наверх.
